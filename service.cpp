@@ -3,9 +3,9 @@
 // Author: Mikko Saarinki
 // Copyright (c) 2016 Mikko Saarinki. All rights reserved.
 //
-
-//#include "YourApp.h"
 #include "ServiceMain.h"
+
+#include "ExampleApp.h"
 
 #define SERVICENAME TEXT("ExampleApp")
 #define DISPLAYNAME TEXT("Windows Service Example") //displayed in Windows Services

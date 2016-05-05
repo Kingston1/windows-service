@@ -7,15 +7,13 @@
 #include "ServiceUtils.h"
 
 #include <memory>
-#include <mutex>
-#include <condition_variable>
 
 /**
 * Generic Windows service and lifetime.
 * Use this for converting well behaved applications to Windows services.
 * Wrapping is done through templating for robustness.
 *
-* See the ExampleApp below this class for the implicit interface.
+* See the ExampleApp.h for the implicit interface.
 */
 template <class TApp>
 class Service
@@ -133,38 +131,4 @@ private:
     SERVICE_STATUS_HANDLE mStatusHandle = nullptr;
     std::unique_ptr<TApp> mApp;
     DWORD mCheckPoint = 1;
-};
-
-/**
-* This example application does nothing but goes to sleep and
-* waits for external stop signal from service.
-*
-* It implements the implicit interface required by the above Service class.
-*
-* Can be used as a template for your own applications.
-*/
-class ExampleApp
-{
-public:
-    int run()
-    {
-        std::unique_lock<std::mutex> lock(mtx);
-        sleeper.wait(lock, [this] { return !running; });
-        return state();
-    }
-
-    void stop()
-    {
-        std::lock_guard<std::mutex> lock(mtx);
-        running = false;
-        sleeper.notify_all();
-    }
-
-    //@return 0 for A_OK and anything else for failures.
-    int state() const { return EXIT_SUCCESS; }
-
-private:
-    mutable std::mutex mtx;
-    std::condition_variable sleeper;
-    bool running = true;
 };

@@ -11,7 +11,7 @@
 * Windows service on stack.
 *
 * All you need to do in ordinary process main for it to become a full blown service:
-* ServiceMain<ExampleApp> service(SERVICENAME, SERVICEDISPLAYNAME, SERVICEDESCRIPTION, argv);
+* ServiceMain<ExampleApp>(SERVICENAME, DISPLAYNAME, DESCRIPTION, argv);
 */
 template <class TApp>
 struct ServiceMain
