@@ -12,7 +12,7 @@ This fork attempts to make this repo into something that can be used by other CM
 
 # Example
 
-An example on how to use this Windows Service library can be found at @todo
+An example on how to use this Windows Service library can be found at https://github.com/Allar/windows-service-example.
 
 # Important
 
