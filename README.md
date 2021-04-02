@@ -1,13 +1,26 @@
 # windows-service
-Promote any application to a first class Windows service. Inject your application into the Service class, give it a name and description (service.cpp). ExampleApp.h has the simple interface required for injection. Use it as a template for your own service.
 
+This is a header only library that allows you to quickly write a Windows Service by using a simple interface. It is also structured according to https://github.com/robotology/how-to-export-cpp-library#-other-template-and-examples.
 
-## building the example application with Visual Studio 2017 (2015 also supported)
+This is a fork from a MIT licensed windows-service template created by Mikko Saarinki and located here https://github.com/Kingston1/windows-service.
+
+This fork attempts to make this repo into something that can be used by other CMake projects easily with the following:
+
 ```
-mkdir x64 && cd x64
-cmake -G "Visual Studio 15 2017 Win64" ..
-"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\Tools\VsDevCmd.bat"
-msbuild /p:Configuration=Release ExampleService.sln
+@TODO:
 ```
 
-Run the app from command line and it will tell you its capabilities.
+# Example
+
+An example on how to use this Windows Service library can be found at @todo
+
+# Important
+
+I forked and made this repo so I can easily write Windows Services without understanding how to write a Windows Service and completely abstract this away from myself. I have no idea about the implementation details and am really not qualified to maintain this repo. Please raise issues and pull requests if you're you could be so inclined.
+
+# TODO
+
+* Document how to use this
+* Add notification tray icon support
+* Write meaningful tests
+* Set up CI stuff
