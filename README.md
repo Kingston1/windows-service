@@ -1,6 +1,6 @@
 # windows-service
 
-This is a header only library that allows you to quickly write a Windows Service by using a simple interface. It is also structured according to https://github.com/robotology/how-to-export-cpp-library#-other-template-and-examples.
+This is a header only library that allows you to quickly write a Windows Service by using a simple interface if you're using CMake 3.19+. It is also structured according to https://github.com/robotology/how-to-export-cpp-library#-other-template-and-examples.
 
 This is a fork from a MIT licensed windows-service template created by Mikko Saarinki and located here https://github.com/Kingston1/windows-service.
 
